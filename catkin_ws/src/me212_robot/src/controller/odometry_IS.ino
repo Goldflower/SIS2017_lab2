@@ -42,6 +42,11 @@ void loop() {
   //////////////////////////////////////////////////////////////////
   // write your code
 
+  delta_theta = (dis_R - dis_L) / (0.235); // 0.235:2b
+  theta = pos[2] + delta_theta;
+
+  x = pose[0] + cos(theta) * dis_R + cos(theta) * dis_L * 0.042 / 2; // 0.042: r
+  y = pose[1] + sin(theta) * dis_R + sin(theta) * dis_L * 0.042 / 2;
   // theta = ???
   // x = ??? 
   // y = ???
