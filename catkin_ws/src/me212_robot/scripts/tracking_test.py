@@ -25,7 +25,7 @@ class Tracking:
 		y     = msg.data[1]
 		theta = msg.data[2]
 		theta = theta % (2* pi)
-		print x,y,theta
+		print(x,y,theta)
 
 		if 1-x > self.linear_err:   #run straightly
 			self.leftMotor.run(1)
