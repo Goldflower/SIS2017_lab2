@@ -37,9 +37,9 @@ class Tracking:
             self.leftMotor.run(self.FORWARD)
             self.rightMotor.run(self.FORWARD)
         elif x >= 1 and theta < pi: # semi-circle        
-            if (x - 1) ** 2 + y ** 2 < 0.25 ** 2: # left_pwm++ or right_pwm--
+            if (x - 1) ** 2 + (y - 0.25) ** 2 < 0.25 ** 2: # left_pwm++ or right_pwm--
                 self.right_pwm -= 2
-            elif (x - 1) ** 2 + y ** 2 > 0.25 ** 2: # left_pwm-- or right_pwm++
+            elif (x - 1) ** 2 + (y - 0.25) ** 2 > 0.25 ** 2: # left_pwm-- or right_pwm++
                 self.left_pwm += 2
             self.leftMotor.setSpeed(self.left_pwm)
             self.rightMotor.setSpeed(self.right_pwm)            
