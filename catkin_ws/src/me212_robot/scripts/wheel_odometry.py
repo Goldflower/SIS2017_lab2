@@ -51,7 +51,12 @@ class wheelOdometry(object):
                 #####################################################
         # generate your trajectory
                 #####################################################
-
+        for i in np.linspace(0, 1): # [0, 1) 產生固定間隔的點, default為50個
+            points.append([i, 0, 0])
+        for i in np.linspace(-np.pi/2, np.pi/2):
+            points.append([np.cos(i)*0.25+1, np.sin(i)*0.25+0.25, 0])
+        for i in np.linspace(0, 1):
+            points.append([i, 0.5, 0])
         for i in xrange(0,9):
             self.vis_pub.publish(self.createPointMarker2(points, 1, [0.6, 0.6, 0, 1]))
 
